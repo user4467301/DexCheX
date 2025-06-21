@@ -204,13 +204,21 @@
 <section class="donation-section">
   <h2>💖 Support the Creator</h2>
   <p>This tool is built with passion and shared freely. If you find it helpful, feel free to send a small donation — it really motivates me to keep improving!</p>
-  <p class="solana-address">My Solana address:<br><span>3iBkkqQHuo3dY9uH5Fet6PHcFYTN4oXy8cX8FjawvjND</span></p>
+  <p class="solana-address">
+  My Solana address:<br>
+  <span id="solanaAddress">3iBkkqQHuo3dY9uH5Fet6PHcFYTN4oXy8cX8FjawvjND</span>
+  <svg id="copyAddress" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px; cursor: pointer;">
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+    <path d="M5 15V5a2 2 0 0 1 2-2h10"></path>
+  </svg>
+</p>
+
   <p class="thank-you">Every bit of support means a lot. Thank you! 💜 - <a href="https://www.threads.com/@user_4467301" target="_blank">Bit</a> | &copy; 2025</p>
 </section>
 
 <!-- Disclaimer Section -->
 <section class="disclaimer-section">
-  <h2>⚠️ Disclaimer</h2>
+  <h2⚠️ Disclaimer</h2>
   <p>
     The information provided by this tool is for educational purposes only and not financial advice.  
     Always do your own research (DYOR) and consult a qualified financial advisor before making investment decisions.  
@@ -268,7 +276,7 @@
   </script>
 
 <script>
-  // Tambahan: Klik area item untuk toggle checkbox
+  // Additional: Click item area to toggle
   document.querySelectorAll('.checklist-item').forEach(item => {
     item.addEventListener('click', function (e) {
       // Hindari double klik jika checkbox yang diklik langsung
@@ -277,6 +285,21 @@
       checkbox.checked = !checkbox.checked;
       updateScore();
     });
+  });
+</script>
+
+<script>
+//copy wallet script
+  const copyButton = document.getElementById('copyAddress');
+  const solanaAddress = document.getElementById('solanaAddress');
+
+  copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(solanaAddress.innerText)
+      .then(() => {
+        copyButton.classList.add('copied');
+        setTimeout(() => copyButton.classList.remove('copied'), 1500);
+      })
+      .catch(() => alert('Copy failed. Please copy manually.'));
   });
 </script>
 
