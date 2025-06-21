@@ -219,3 +219,24 @@ a:hover {
   margin-top: 8px;
 }
 
+/* Disclaimer Section */
+.disclaimer-section {
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #444;
+  text-align: center;
+}
+
+.disclaimer-section h2 {
+  color: #ff8c42;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.disclaimer-section p {
+  color: #bbb;
+  font-size: 9.5px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
