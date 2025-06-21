@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEXCHEX Token Screening (Solana)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📊 DEXCHEX Token Screening (Solana)</h1>
+    <p class="subtitle">
+      This tool helps you evaluate whether a Solana-based token listed on DEX is worth buying or not.
+      Use the checklist across different categories to calculate a total score. A higher score means the token is more likely to be a safe and good opportunity.
+    </p>
+
+    <!-- TAB BUTTONS -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="token">📁 Token Data</button>
+      <button class="tab-button" data-tab="liquidity">💧 Liquidity & Volume</button>
+      <button class="tab-button" data-tab="community">🌐 Community</button>
+      <button class="tab-button" data-tab="performance">📈 Performance</button>
+      <button class="tab-button" data-tab="advanced">🧠 Advanced</button>
+    </div>
+
+    <!-- FORM -->
+    <form id="checklistForm">
+
+      <!-- TOKEN DATA -->
+      <div class="section-tab active" id="tab-token">
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Not a Honeypot</span>
+            <p class="desc">
+              Token is not a trap that prevents it from being sold.<br /><br />
+              <strong>How to check if a token is not a honeypot:</strong>
+              <ul class="desc-list">
+                <li>Visit <a href="https://rugcheck.xyz" target="_blank">rugcheck.xyz</a> and search for the token</li>
+                <li>Ensure it says: <strong>No sell block function</strong></li>
+                <li>You can also check on <a href="https://birdeye.so" target="_blank">birdeye.so</a> or <a href="https://dexscreener.com" target="_blank">dexscreener.com</a></li>
+                <li>Look if wallets have successfully sold the token</li>
+              </ul>
+            </p>
+          </div>
+          <input type="checkbox" data-score="3" />
+        </div>
+
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Ownership Renounced</span>
+            <p class="desc">No longer controlled by developers.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">No Blacklist / Pause Function</span>
+            <p class="desc">Prevents dev from blocking wallets or pausing transfers.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Verified Contract</span>
+            <p class="desc">Contract is verified and transparent.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+      </div>
+
+      <!-- LIQUIDITY -->
+      <div class="section-tab" id="tab-liquidity">
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Liquidity Pool ≥ $30K</span>
+            <p class="desc">High liquidity allows easier exit and reduces slippage.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">24H Volume ≥ $20K</span>
+            <p class="desc">Shows active interest in the token.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Significant Number of Holders</span>
+            <p class="desc">More than 400 unique holders indicates strong distribution.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Liquidity Locked</span>
+            <p class="desc">Prevents rugpulls by developers.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">No Whale >5%</span>
+            <p class="desc">Avoids price manipulation by large holders.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">No Mint Function</span>
+            <p class="desc">Contract has no mint() function or it has been disabled permanently.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">No Transfer Disable Function</span>
+            <p class="desc">Token cannot be paused or blocked by the contract owner.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="section-tab" id="tab-community">
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Active on Social Media</span>
+            <p class="desc">Indicates ongoing development and communication.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Community ≥ 1000 Members</span>
+            <p class="desc">Bigger communities help token adoption.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Active Developer</span>
+            <p class="desc">Shows the project is not abandoned.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Has Website or bio.link</span>
+            <p class="desc">Indicates professionalism and presence.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+      </div>
+
+      <!-- PERFORMANCE -->
+      <div class="section-tab" id="tab-performance">
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Consistent Uptrend</span>
+            <p class="desc">Suggests market interest and positive sentiment.</p>
+          </div>
+          <input type="checkbox" data-score="2" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Price Above EMA</span>
+            <p class="desc">Technical signal showing buyer strength.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">No Major Dump</span>
+            <p class="desc">Stable price action is healthier for holders.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">More Buy than Sell + Many Wallets</span>
+            <p class="desc">Indicates healthy distribution and buying pressure.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+      </div>
+
+      <!-- ADVANCED -->
+      <div class="section-tab" id="tab-advanced">
+        <div class="checklist-item">
+          <div class="item-text">
+            <span class="item-label">Burn Mechanism Exists</span>
+            <p class="desc">Token has a supply burn mechanism or tokens sent to dead address to reduce supply.</p>
+          </div>
+          <input type="checkbox" data-score="1" />
+        </div>
+      </div>
+
+      <!-- SCORE RESULT -->
+      <div class="result">
+        <p id="resultText">Score: 0</p>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="resetBtn">Reset</button>
+      </div>
+    </form>
+  </div>
+
+<!-- Donation Section -->
+<section class="donation-section">
+  <h2>💖 Support the Creator</h2>
+  <p>This tool is built with passion and shared freely. If you find it helpful, feel free to send a small donation — it really motivates me to keep improving!</p>
+  <p class="solana-address">My Solana address:<br><span>3iBkkqQHuo3dY9uH5Fet6PHcFYTN4oXy8cX8FjawvjND</span></p>
+  <p class="thank-you">Every bit of support means a lot. Thank you! 💜</p>
+</section>
+
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const resultText = document.getElementById('resultText');
+    const resetBtn = document.getElementById('resetBtn');
+
+    function updateScore() {
+      let total = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) total += parseInt(cb.dataset.score);
+      });
+
+      let message = "";
+      if (total < 15) {
+        message = "Avoid — Too Risky ❌";
+      } else if (total < 20) {
+        message = "Maybe — DYOR ⚠️";
+      } else {
+        message = "Worth Buying ✅";
+      }
+
+      resultText.textContent = `Score: ${total} — ${message}`;
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener('change', updateScore));
+
+    resetBtn.addEventListener('click', () => {
+      if (confirm("Are you sure you want to reset all selections?")) {
+        checkboxes.forEach(cb => cb.checked = false);
+        updateScore();
+      }
+    });
+
+    updateScore();
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.section-tab');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById('tab-' + button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+
+<script>
+  // Tambahan: Klik area item untuk toggle checkbox
+  document.querySelectorAll('.checklist-item').forEach(item => {
+    item.addEventListener('click', function (e) {
+      // Hindari double klik jika checkbox yang diklik langsung
+      if (e.target.tagName.toLowerCase() === 'input') return;
+      const checkbox = this.querySelector('input[type="checkbox"]');
+      checkbox.checked = !checkbox.checked;
+      updateScore();
+    });
+  });
+</script>
+
+</body>
+</html>
